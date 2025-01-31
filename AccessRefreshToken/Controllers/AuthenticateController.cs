@@ -61,6 +61,9 @@ namespace AccessRefreshToken.Controllers
             string ? newAccessToken = _accessToken.GenerateAccessToken(userId);
             string ? newRefreshToken = _refreshToken.GenerateRefreshToken(userId);
 
+            // Remove old RefreshToken
+            // _redisCacheServices.RemoveData(tokenModel.RefreshToken);
+            
             var refreshTokenModel = new RefreshTokenModel()
             {
                 Token = newRefreshToken,
