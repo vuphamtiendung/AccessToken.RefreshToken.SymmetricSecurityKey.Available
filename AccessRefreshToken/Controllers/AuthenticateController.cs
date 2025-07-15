@@ -108,8 +108,8 @@ namespace AccessRefreshToken.Controllers
             }
             else
             {
-                return Unauthorized();
                 _loggingServices.LogError("User had been loging failed");
+                return Unauthorized();
             }
         }
     }
